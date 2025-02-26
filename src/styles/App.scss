@@ -1,0 +1,126 @@
+@import 'variables';
+@import 'mixins';
+
+.pdf-viewer {
+  min-height: 100vh;
+  background-color: $gray-100;
+  padding: $spacing-8;
+
+  &__container {
+    max-width: 64rem;
+    margin: 0 auto;
+  }
+
+  &__card {
+    @include card;
+    padding: $spacing-6;
+    margin-bottom: $spacing-8;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $gray-800;
+    margin-bottom: $spacing-6;
+  }
+
+  &__upload-zone {
+    @include flex-center;
+    flex-direction: column;
+    width: 100%;
+    height: 8rem;
+    border: 2px dashed $gray-300;
+    border-radius: $radius-lg;
+    background-color: $gray-50;
+    cursor: pointer;
+    margin-bottom: $spacing-6;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background-color: $gray-100;
+    }
+
+    &-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      color: $gray-400;
+      margin-bottom: $spacing-3;
+    }
+
+    &-text {
+      color: $gray-500;
+      font-size: 0.875rem;
+      margin-bottom: $spacing-2;
+
+      strong {
+        font-weight: 600;
+      }
+    }
+
+    &-hint {
+      color: $gray-500;
+      font-size: 0.75rem;
+    }
+  }
+
+  &__file-info {
+    @include flex-center;
+    justify-content: space-between;
+    background-color: $gray-50;
+    padding: $spacing-4;
+    border-radius: $radius-lg;
+    margin-bottom: $spacing-4;
+
+    &-details {
+      @include flex-center;
+      gap: $spacing-3;
+    }
+
+    &-icon {
+      color: $primary-color;
+    }
+
+    &-name {
+      font-weight: 500;
+    }
+
+    &-remove {
+      color: $danger-color;
+      cursor: pointer;
+      transition: color 0.2s ease-in-out;
+
+      &:hover {
+        color: $danger-hover;
+      }
+    }
+  }
+
+  &__document {
+    border: 1px solid $gray-300;
+    border-radius: $radius-lg;
+    padding: $spacing-4;
+
+    &-container {
+      @include flex-center;
+      flex-direction: column;
+    }
+
+    &-page {
+      margin-bottom: $spacing-4;
+    }
+
+    &-navigation {
+      @include flex-center;
+      gap: $spacing-4;
+      margin-top: $spacing-4;
+
+      &-button {
+        @include primary-button;
+      }
+
+      &-info {
+        color: $gray-600;
+      }
+    }
+  }
+}
